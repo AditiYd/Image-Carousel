@@ -1,0 +1,18 @@
+<div class="card">
+    <div class = "center">
+        <div class = "arrow">
+            <button (click)="changePrev()"><</button>
+        </div>
+        <div class="icon">
+            <img src="{{img[currentImgIndex]}}" class="img" alt="image">
+        </div>
+        <div class = "arrow">
+            <button (click)="changeNext()">></button>
+        </div>
+    </div>
+
+    <div class="buttons-container">
+     <button class="dot-btn" *ngFor="let image of img; let i = index" [ngClass]="{'active': i == currentImgIndex}"
+                (click)="currentImgIndex = i"></button>
+    </div>
+</div>
